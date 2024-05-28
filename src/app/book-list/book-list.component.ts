@@ -1,14 +1,15 @@
 import { Component } from '@angular/core';
 import { Store, select } from '@ngrx/store';
-import { Observable } from 'rxjs';
+import { Observable, pipe } from 'rxjs';
 import { Book } from '../models/book';
 import { AddBook, RemoveBook } from '../books/book.actions';
 import { AppState } from '../app.state';
+import { AsyncPipe, NgFor } from '@angular/common';
 
 @Component({
   selector: 'app-book-list',
   standalone: true,
-  imports: [],
+  imports: [AsyncPipe, NgFor],
   templateUrl: './book-list.component.html',
   styleUrl: './book-list.component.scss'
 })
